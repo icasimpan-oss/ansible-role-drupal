@@ -36,9 +36,9 @@ Several drupal site per machine:
 
     - hosts: servers
       roles:
-         - { role: icasimpan.drupal, d8-dev.casimpan.com,     db_user: d8_devDBA,  db_pass: db_devPASS, db_name: d8_devDB}
-         - { role: icasimpan.drupal, d8-staging.casimpan.com, db_user: d8_stgDBA,  db_pass: db_stgPASS, db_name: d8_stgDB}
-         - { role: icasimpan.drupal, d8-prod.casimpan.com,    db_user: d8_prodDBA, db_pass: db_updPASS, db_name: d8_updDB}
+         - { role: icasimpan.drupal, d8-dev.casimpan.com,     db_user: d8_devDBA,  db_pass: db_devPASS,  db_name: d8_devDB}
+         - { role: icasimpan.drupal, d8-staging.casimpan.com, db_user: d8_stgDBA,  db_pass: db_stgPASS,  db_name: d8_stgDB}
+         - { role: icasimpan.drupal, d8-prod.casimpan.com,    db_user: d8_prodDBA, db_pass: db_prodPASS, db_name: d8_prodDB}
 
 License
 -------
