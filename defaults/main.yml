@@ -1,0 +1,14 @@
+---
+site_email: ismael.angelo@casimpan.com
+
+## root parent directory where drupal sites will be written
+drupal_parentroot: /var/www
+
+## user/group for drupal files
+webserver_user: httpd
+webserver_group: "{{ webserver_user }}"
+
+## drupal admin account
+account_email: "{{ site_email }}"
+drupal_adminuser: admin
+drupal_adminpassword: drupal

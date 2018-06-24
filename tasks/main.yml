@@ -1,0 +1,18 @@
+---
+- name: Run composer-based d8 install
+  command: composer create-project drupal-composer/drupal-project:8.x {{ site_domain }} --stability dev
+  args:
+    chdir: "{{ drupal_parentroot }}"
+
+- name: Run 'drush site-install'
+  command: ../vendor/bin/drush site-install --account-name={{ drupal_adminuser }} --account-pass={{ drupal_adminpassword }} --account-mail={{ account_email }} --site-mail={{ site_email }} --db-url=mysql://{{ db_user }}:{{ db_pass }}@localhost/{{ db_name }} -y
+  args:
+    chdir: "{{ drupal_parentroot }}/{{ site_domain }}/web"
+
+- name: Ensure webserver_user can write to drupal_parentroot
+  file:
+    path: "{{ drupal_parentroot }}"
+    state: directory
+    owner: "{{ webserver_group }}"
+    group: "{{ webserver_user }}"
+    recurse: yes

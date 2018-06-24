@@ -1,0 +1,23 @@
+galaxy_info:
+  author: Ismael Angelo A. Casimpan Jr.
+  description: Deploy or install Drupal on your servers.
+  license: "license (BSD, MIT)"
+  min_ansible_version: 2.4
+  platforms:
+    - name: EL
+      versions:
+      - all
+    - name: Ubuntu
+      versions:
+      - all
+    - name: Debian
+      versions:
+      - all
+  galaxy_tags:
+    - development
+    - web
+    - drupal
+    - cms
+    - php
+
+dependencies: []
