@@ -1,6 +1,10 @@
 ---
 site_email: ismael.angelo@casimpan.com
 
+## Use latest released drupal 8 version
+## For drupal7, override in playbook with "7x"
+drupal_ver: 8x
+
 ## root parent directory where drupal sites will be written
 drupal_parentroot: /var/www
 

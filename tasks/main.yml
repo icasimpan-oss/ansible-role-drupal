@@ -1,11 +1,29 @@
 ---
+- name: Drupal7 variables include
+  include_vars:
+    file: vars/drupal7x.yml
+  when: drupal_ver == "7x"
+
+- name: Run drush-based install for d7
+  command: {{ drush_bin }} dl drupal-7 --destination={{ site_domain }} --drupal-project-rename=web -y
+  args:
+    chdir: /var/www/sites
+  when drupal_ver == "7x"
+
+- name: Drupal8 variables include
+  include_vars:
+    file: vars/drupal8x.yml
+  when: drupal_ver == "8x"
+
 - name: Run composer-based d8 install
   command: composer create-project drupal-composer/drupal-project:8.x {{ site_domain }} --stability dev
   args:
     chdir: "{{ drupal_parentroot }}"
+  when drupal_ver == "8x"
 
+## site-install is now common between drupal7 & drupal8
 - name: Run 'drush site-install'
-  command: ../vendor/bin/drush site-install --account-name={{ drupal_adminuser }} --account-pass={{ drupal_adminpassword }} --account-mail={{ account_email }} --site-mail={{ site_email }} --db-url=mysql://{{ db_user }}:{{ db_pass }}@localhost/{{ db_name }} -y
+  command: {{ drush_bin }} site-install --account-name={{ drupal_adminuser }} --account-pass={{ drupal_adminpassword }} --account-mail={{ account_email }} --site-mail={{ site_email }} --db-url=mysql://{{ db_user }}:{{ db_pass }}@localhost/{{ db_name }} -y
   args:
     chdir: "{{ drupal_parentroot }}/{{ site_domain }}/web"
 
