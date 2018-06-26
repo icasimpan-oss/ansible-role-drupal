@@ -26,8 +26,8 @@ Not yet explicitly listed but please refer to Requirements above for details.
 Example Playbook
 ----------------
 Default Drupal Admin credentials:
-  username: admin
-  password: drupal
+* username: admin
+* password: drupal
 
 One drupal site per machine:
 
@@ -58,5 +58,5 @@ BSD
 Author Information
 ------------------
 
-Ismael Angelo A. Casimpan, Jr.
-email: ismael.angelo@casimpan.com
+* Ismael Angelo A. Casimpan, Jr.
+* email: ismael.angelo@casimpan.com
