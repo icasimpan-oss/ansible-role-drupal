@@ -7,7 +7,7 @@
 - name: Run drush-based install for d7
   command: "{{ drush_bin }} dl drupal-7 --destination={{ site_domain }} --drupal-project-rename=web -y"
   args:
-    chdir: /var/www/sites
+    chdir: "{{ drupal_parentroot }}"
   when: drupal_ver == "7x"
 
 - name: Drupal8 variables include
