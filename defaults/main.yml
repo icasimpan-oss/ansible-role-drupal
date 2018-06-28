@@ -1,5 +1,6 @@
 ---
 site_email: ismael.angelo@casimpan.com
+site_domain: drupal.casimpan.com
 
 ## Use latest released drupal 8 version
 ## For drupal7, override in playbook with "7x"
